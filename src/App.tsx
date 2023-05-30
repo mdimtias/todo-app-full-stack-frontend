@@ -26,19 +26,19 @@ function App() {
     <>
       <div className="app">
         <div className="container mx-auto">
-          <h1 className="text-center font-bold text-3xl py-5">Todo App</h1>
+          <h1 className="text-center font-bold text-3xl pt-5">Todo App</h1>
           <div className="top text-center flex justify-center gap-5 py-5">
             <input
-              className="py-2 px-5 outline-none text-xl font-medium border border-blue-400 rounded-lg"
+              className="border border-gray-300 rounded-md py-2 px-4 outline-none"
               type="text"
-              placeholder="add todo"
+              placeholder="Enter a todo"
               value={text}
               onChange={(e) => setText(e.target.value)}
             />
             <div className="add">
               {isUpdating ? (
                 <button
-                  className="bg-black text-white py-3 px-5 rounded-md"
+                  className="bg-blue-500 hover:bg-blue-600 text-white rounded-md py-2 px-4"
                   onClick={() =>
                     updateTodo(todoId, text, setText, setTodo, setIsUpdating)
                   }
@@ -47,7 +47,7 @@ function App() {
                 </button>
               ) : (
                 <button
-                  className="bg-black text-white py-3 px-5 rounded-md"
+                  className="bg-blue-500 hover:bg-blue-600 font-semibold text-white rounded-md py-2 px-5"
                   onClick={() => addTodo(text, setText, setTodo)}
                 >
                   Add
@@ -55,7 +55,7 @@ function App() {
               )}
             </div>
           </div>
-          <div className="list flex flex-col gap-5">
+          <div className="list flex flex-col justify-center lg:items-center gap-3 px-5">
             {todo.map((item: { text: string; _id: string }) => (
               <Todo
                 key={item._id}

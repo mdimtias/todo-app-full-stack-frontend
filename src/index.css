@@ -1,8 +1,14 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600;700&display=swap');
 *{
   margin: 0;
   padding: 0;
+}
+.list-item-bg{
+  background-image: linear-gradient( 270.3deg,  rgba(84,212,228,1) 0.2%, rgba(68,36,164,1) 100% );
+}
+body, h1, p{
+  font-family: 'Raleway', sans-serif;
 }

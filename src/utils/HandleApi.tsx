@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const baseUrl = "http://localhost:8080";
+const baseUrl = "https://todo-app-full-stack-backend.onrender.com";
 const getAllTodo = (setTodo: any) => {
   axios
     .get(baseUrl)
@@ -13,7 +13,7 @@ const getAllTodo = (setTodo: any) => {
 const addTodo = (text: String, setText: Function, setTodo: Function) => {
   axios
     .post(`${baseUrl}/save`, { text })
-    .then((data) => {
+    .then(() => {
       setText("");
       getAllTodo(setTodo);
     })
@@ -29,7 +29,7 @@ const updateTodo = (
 ) => {
   axios
     .put(`${baseUrl}/update`, { _id: todoId, text })
-    .then((data) => {
+    .then(() => {
       setText("");
       setIsUpdating(false);
       getAllTodo(setTodo);
@@ -40,7 +40,7 @@ const updateTodo = (
 const deleteTodo = (todoId: string, setTodo: Function) => {
   axios
     .delete(`${baseUrl}/delete`, { data: { _id: todoId } })
-    .then((data) => {
+    .then(() => {
       getAllTodo(setTodo);
     })
     .catch((error) => console.log(error));
