@@ -36,4 +36,14 @@ const updateTodo = (
     })
     .catch((error) => console.log(error));
 };
-export { getAllTodo, addTodo, updateTodo };
+
+const deleteTodo = (todoId: string, setTodo: Function) => {
+  axios
+    .delete(`${baseUrl}/delete`, { data: { _id: todoId } })
+    .then((data) => {
+      getAllTodo(setTodo);
+    })
+    .catch((error) => console.log(error));
+};
+
+export { getAllTodo, addTodo, updateTodo, deleteTodo };

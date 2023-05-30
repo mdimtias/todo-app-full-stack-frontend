@@ -10,7 +10,9 @@ const Todo = (props : {text: String, updateMode: Function, deleteMode: Function}
                 <button onClick={()=>props.updateMode()}>
                 <EditIcon></EditIcon>
                 </button>
+                <button onClick={()=>props.deleteMode()}>
                 <DeleteIcon></DeleteIcon>
+                </button>
             </div>
         </div>
     );
